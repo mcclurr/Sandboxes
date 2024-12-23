@@ -1,0 +1,13 @@
+version: '3.9'
+
+name: go-env
+services:
+  go_env:
+    build:
+      context: .
+    image: go-environment:latest
+    container_name: go_dev_env
+    tty: true
+    volumes:
+      - ./src:/go/src/app
+      - ./vscode-server:/root/.vscode-server
