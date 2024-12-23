@@ -9,5 +9,5 @@ services:
     container_name: go_dev_env
     tty: true
     volumes:
-      - ./src:/go/src/app
+      - ./src:/go/src/app:rw
       - ./vscode-server:/root/.vscode-server
