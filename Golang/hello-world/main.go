@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/mcclurr/Sandboxes/Golang/mascot"
+	"github.com/mcclurr/Sandboxes/Golang/hello-world/mascot"
 )
 
 func main() {
