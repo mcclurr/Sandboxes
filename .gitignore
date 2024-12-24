@@ -1,1 +1,4 @@
 vscode-server/
+grpc-go/
+*.pb.go
+*.pb
