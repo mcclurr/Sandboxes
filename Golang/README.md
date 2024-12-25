@@ -5,4 +5,6 @@ To initialize project:
  ie.
  - go mod init github.com/mcclurr/Sandboxes/Golang/hello-world
 
+To bring in dependencies:
+ - go mod tidy
 
