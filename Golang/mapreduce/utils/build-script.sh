@@ -7,11 +7,15 @@ set -e
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 # Define variables relative to the script's location
+CFG_NAME="config.ini"
 ROOT_DIR="$SCRIPT_DIR/.."
 PROTO_DIR="$ROOT_DIR/protos"
+CFG_DIR="$ROOT_DIR/configs"
 PROTO_FILE="$PROTO_DIR/masterworker.proto"
+CFG_FILE="$CFG_DIR/$CFG_NAME"
 OUTPUT_DIR="$ROOT_DIR/build"
 BIN_DIR="$OUTPUT_DIR/bin"
+CFG_LINK="$BIN_DIR/$CFG_NAME"
 PROTO_OUTPUT="$OUTPUT_DIR/proto"
 MASTER_SRC="$ROOT_DIR/master/main.go"
 WORKER_SRC="$ROOT_DIR/worker/main.go"
@@ -41,6 +45,9 @@ go build -o "$MASTER_BINARY" "$MASTER_SRC"
 # Build the worker binary
 echo "Building the worker..."
 go build -o "$WORKER_BINARY" "$WORKER_SRC"
+
+# Create the symbolic link
+ln -sfn "$CFG_FILE" "$CFG_LINK"
 
 # Print success message for builds
 echo "Master and Worker binaries compiled successfully to $OUTPUT_DIR"

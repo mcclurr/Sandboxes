@@ -1,7 +1,5 @@
 FROM golang:1.23
 
-RUN go install -v github.com/go-delve/delve/cmd/dlv@latest
-
 # Install Delve (Go Debugger)
 RUN go install -v github.com/go-delve/delve/cmd/dlv@latest
 

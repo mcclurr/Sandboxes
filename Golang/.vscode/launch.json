@@ -12,15 +12,22 @@
             "name": "route_guide server (Debug)",
             "type": "go",
             "request": "launch",
-            "mode": "debug",
-            "program": "${workspaceFolder}/route_guide/server/server.go"
+            "mode": "exec",
+            "program": "${workspaceFolder}/route_guide/build/bin/server"
         },
         {
             "name": "route_guide client (Debug)",
             "type": "go",
             "request": "launch",
-            "mode": "debug",
-            "program": "${workspaceFolder}/route_guide/client/client.go"
+            "mode": "exec",
+            "program": "${workspaceFolder}/route_guide/build/bin/client"
         },
+        {
+            "name": "mapreduce master (Debug)",
+            "type": "go",
+            "request": "launch",
+            "mode": "exec",
+            "program": "${workspaceFolder}/mapreduce/build/bin/master"
+        }
     ]
 }
