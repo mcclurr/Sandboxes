@@ -35,12 +35,11 @@ import (
 	"sync"
 	"time"
 
+	pb "github.com/mcclurr/Sandboxes/Golang/route_guide/build/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/examples/data"
 	"google.golang.org/protobuf/proto"
-
-	pb "google.golang.org/grpc/examples/route_guide/routeguide"
 )
 
 var (
