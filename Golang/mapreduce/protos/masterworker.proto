@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+option go_package = "github.com/mcclurr/Sandboxes/Golang/mapreduce/protos";
+
+package masterworker;
+
+// The job distribution service definition.
+service JobDistribution {
+  // Gives the Map Job
+  rpc Map (MapRequest) returns (MapReply) {}
+  // Gives the Reduce Job
+  rpc Reduce (ReduceRequest) returns (ReduceReply) {}
+}
+
+message Offset {
+  string file = 1; // The file name
+  int32 start = 2; // The start offset
+  int32 end = 3;   // The end offset
+}
+
+message File {
+  string file = 1;
+}
+
+// The Map request message
+message MapRequest {
+  int32 id = 1;
+  string user_id = 2;
+  string output_dir = 3;
+  int32 n_output_files = 4;
+  string addr = 5;
+  repeated Offset offsets = 6;
+}
+
+// The Map response message
+message MapReply {
+  string status = 1;
+  repeated File files = 2;
+}
+
+// The Reduce request message
+message ReduceRequest {
+  int32 id = 1;
+  string user_id = 2;
+  string output_dir = 3;
+  int32 n_output_files = 4;
+  string addr = 5;
+  repeated File files = 6;
+}
+
+// The Reduce response message
+message ReduceReply {
+  string status = 1;
+}
